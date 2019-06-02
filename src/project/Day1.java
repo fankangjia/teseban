@@ -32,7 +32,7 @@ public class Day1 {
 		FileOutputStream fout=null;
 		try {
 			fout=new FileOutputStream("C:\\Users\\da_fa\\Desktop\\"+filename);
-			fout.write(word.getBytes());
+			fout.write(word.getBytes("utf-8"));
 			fout.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("文件名输入错误！");
