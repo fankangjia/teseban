@@ -1,4 +1,8 @@
 package project.project_week_one;
+
+import java.awt.List;
+import java.util.ArrayList;
+
 /**
  * 数组去重，两个版本，第一版为对指定数组去重；
  * 第二版为对数组中指定重复次数的元素去重。
@@ -27,6 +31,10 @@ public class RemoveDuplication {
 	 * @return 返回一个去重后的数组
 	 */
 	public static int[] quchong(int[] a) {
+		if(a==null) {
+			System.out.println("数组不能为空。");
+			System.exit(0);
+		}
 		//冒泡排序，先对数组进行初步处理
 		int c=0;
 		for(int i=0;i<a.length;i++) {
@@ -61,6 +69,10 @@ public class RemoveDuplication {
 	 */ 
 	public static int[] quchong(int[] a,int times) {
 		//冒泡排序，先对数组进行初步处理
+		if(a==null) {
+			System.out.println("数组不能为空。");
+			System.exit(0);
+		}
 		int c=0;
 		for(int i=0;i<a.length;i++) {
 			for(int j=i+1;j<a.length;j++) {
@@ -88,6 +100,14 @@ public class RemoveDuplication {
 		}
 		return a;
 	}
+	//去重方法三
+//	public static int[] quchong3(int[] a) {
+//		ArrayList<Integer> list=new ArrayList<Integer>();
+//		for(int i=0;i<a.length;i++) {
+//			list.add(a[i]);
+//		}
+//		ArrayList.sort(a);
+//	}
 	public static void main(String[] args) {
 		int[] a= {2,9,3,4,5,7,8,2,2,3,5,7};
 		System.out.print("原始数组：");
@@ -108,7 +128,9 @@ public class RemoveDuplication {
 			else break;
 		}
 		System.out.println();
-		int[] a2= {2,9,3,4,5,7,8,2,2,3,5,7,6,6,6,8,8};
+//		int[] a2= {2,9,3,4,5,7,8,2,2,3,5,7,6,6,6,8,8};
+//		int[] a2= {10,10,3,4,3,6,3,3,6,0,4,6,4,0};
+		int[] a2= null;
 		//调用去重二方法
 		b=quchong(a2,3);
 		System.out.print("去重结果：");
